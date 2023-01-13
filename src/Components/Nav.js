@@ -31,7 +31,7 @@ const Nav = () => {
         <img
           className="nav__avatar"
           src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-          alt="netflix logo"
+          alt="netflix avatar"
         />
       </div>
       {/* This is the nav Bar. */}
