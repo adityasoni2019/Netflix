@@ -6,7 +6,7 @@ const HomeScreen = () => {
   return (
     <div className='homeScreen'>
         <Nav/> 
-        This is the home screen.
+        {/* This is the home screen. */}
     </div>
   )
 }
