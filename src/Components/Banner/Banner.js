@@ -51,7 +51,7 @@ const Banner = () => {
         </h1>
       </div>
 
-      <div className='banner__fadeButtom'>
+      <div className='banner__fadeBottom'>
         {/* This is basically for giving the banner a fade effect */}
 
       </div>         
