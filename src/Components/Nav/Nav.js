@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import "../Components/Nav.css";
+import '../Nav/Nav.css'
 
 const Nav = () => {
 
