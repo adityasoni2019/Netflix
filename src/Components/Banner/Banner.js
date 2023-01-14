@@ -1,11 +1,31 @@
 // The banner is basically the movie banner. Something like trending or something 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from '../../files/Axios';
+import requests from '../../files/Requests';
 import '../Banner/Banner.css'
 
 
 // the function below is to truncate our text when the .banner__description is too long 
 
 const Banner = () => {
+
+  // fetchignt the movie from TBDB
+  const [movie, setMovie] = useState([]);
+
+  useEffect(() => {
+    async function fetchData(){
+      const request = await axios.get(requests.fetchNetflixOriginals); 
+      setMovie(
+        request.data.results[
+          Math.floor(Math.random() * request.data.results.length-1)
+        ]
+      );
+      return request; 
+    }
+    fetchData(); 
+  }, []);
+
+  console.log(movie);
 
   function truncate(string, n){
     return string?.length > n? string.substr(0,n-1) + '...': string; 
@@ -15,19 +35,19 @@ const Banner = () => {
     <header className='banner'
       style = {{
         backgroundSize: "cover", 
-        backgroundImage: `url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg")`,
+        backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
         backgroundPosition: "center center",
       }}
     >
       <div className='banner__contents'>
-        <h1 className='banner__title'>Movie Name</h1>
+        <h1 className='banner__title'>{movie?.title || movie?.name  || movie?.original_name}</h1>
         <div className='banner__buttons'>
           <button className='banner__button'>Play</button>
           <button className='banner__button'>My list</button>
         </div>
 
         <h1 className='banner__description'>
-        {truncate(`This is a test description. This is a test description. This is a test description. This is a test description. This is a test description. This is a test description. This is a test description. This is a test description. This is a test description. This is a test description. This is a test description. This is a test description. This is a test description. This is a test description.`, 150)}
+        {truncate(movie?.overview, 150)}
         </h1>
       </div>
 
