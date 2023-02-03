@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../Login/LoginScreen.css'
+import SignInScreen from '../SignInScreen';
 
 const LoginScreen = () => {
+
+  const [signIn, setSignIn] = useState(false);
+
   return (
+
     <div className='loginScreen'>
       <div className='loginScreen__background'>
         <img
@@ -13,27 +18,39 @@ const LoginScreen = () => {
           alt="login background"
         />
 
-        <button className='loginScreen__button'>Sign in</button>
+        <button
+          onClick={() => setSignIn(true)}
+          className='loginScreen__button'>Sign in</button>
 
         <div className='loginScreen__gradient' />
         <>
           <div className='loginScreen__body'>
 
-            <h1>Unlimited movies, TV shows and more.</h1>
-            <h2>Watch anywhere. Cancel anytime.</h2>
-            <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
+            {
+              signIn ? (<SignInScreen />) : (
+                <>
 
-          </div>
+                  <h1>Unlimited movies, TV shows and more.</h1>
+                  <h2>Watch anywhere. Cancel anytime.</h2>
+                  <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
 
-          <div className='loginScreen__input'>
-            <form>
-              <input
-                type="email"
-                placeholder='Email'
-              />
-              
-              <button className='loginScreen__getStarted'>get started</button>
-            </form>
+
+                  <div className='loginScreen__input'>
+                    <form>
+                      <input
+                        type="email"
+                        placeholder='Email'
+                      />
+
+                      <button
+                        onClick={() => setSignIn(true)}
+                        className='loginScreen__getStarted'>get started</button>
+                    </form>
+                  </div>
+                </>
+              )}
+
+
           </div>
         </>
       </div>
