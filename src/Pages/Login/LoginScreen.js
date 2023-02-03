@@ -28,7 +28,7 @@ const LoginScreen = () => {
 
             {
               signIn ? (<SignInScreen />) : (
-                <>
+                <div className='loginBody_text'>
 
                   <h1>Unlimited movies, TV shows and more.</h1>
                   <h2>Watch anywhere. Cancel anytime.</h2>
@@ -47,7 +47,7 @@ const LoginScreen = () => {
                         className='loginScreen__getStarted'>get started</button>
                     </form>
                   </div>
-                </>
+                </div>
               )}
 
 

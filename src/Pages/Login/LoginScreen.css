@@ -1,3 +1,7 @@
+body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
 .loginScreen{
     /* position: relative; */
     height: 100%;
@@ -55,17 +59,25 @@
     z-index: 1; 
     color: #fff;
     padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin:auto;
+    width: 100%;
     /* text-align: center; */
-    
     overflow: hidden;
 }
 
-.loginScreen__body>h1{
-    font-size: 3.125rem;
-    margin-bottom: 20px;
+.loginBody_text{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.loginBody_text> h1{
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .loginScreen__input> form> input{
