@@ -4,7 +4,6 @@ import axios from '../../files/Axios';
 import requests from '../../files/Requests';
 import '../Banner/Banner.css'
 
-
 // the function below is to truncate our text when the .banner__description is too long 
 
 const Banner = () => {
