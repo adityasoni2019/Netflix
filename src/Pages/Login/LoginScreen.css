@@ -80,19 +80,33 @@ body{
     text-align: center;
 }
 
+.loginBody_text> h2{
+    font-size: 1.625rem;
+    font-weight: 400;
+}
+
+.loginBody_text> h3{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.loginForm{
+    display: flex;
+}
+
 .loginScreen__input> form> input{
     padding: 10px;
     outline-width: 0;
-    height: 30px;
-    width: 30%;
+    width: 100%;
     border: none;
     max-width: 600px;
-
+    font-size: 1.625rem;
+    font-weight: 400;
 }
 
 .loginScreen__getStarted{
-    padding: 16px 20px;
-    font-size: 1rem;
+    font-size: 1.625rem;
+    font-weight: 400;
     color: #fff;
     background-color: #e50914;
     border: none;
@@ -100,5 +114,5 @@ body{
 }
 
 .loginScreen__input{
-    margin: 20px;
+    width: 100%;
 }

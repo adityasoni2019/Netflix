@@ -36,7 +36,7 @@ const LoginScreen = () => {
 
 
                   <div className='loginScreen__input'>
-                    <form>
+                    <form className='loginForm'>
                       <input
                         type="email"
                         placeholder='Email'
@@ -44,7 +44,7 @@ const LoginScreen = () => {
 
                       <button
                         onClick={() => setSignIn(true)}
-                        className='loginScreen__getStarted'>get started</button>
+                        className='loginScreen__getStarted'>Get Started</button>
                     </form>
                   </div>
                 </div>
